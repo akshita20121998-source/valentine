@@ -1,207 +1,177 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
   <title>Will You Be My Valentine?</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <style>
     body {
       margin: 0;
-      font-family: "Poppins", sans-serif;
-      background: linear-gradient(135deg, #ffdde1, #ee9ca7);
-      height: 100vh;
-      overflow: hidden;
+      font-family: "Arial", sans-serif;
+      background: linear-gradient(to bottom, #ffd6e8, #fff);
       display: flex;
       justify-content: center;
       align-items: center;
+      min-height: 100vh;
     }
 
     .card {
       background: white;
+      border-radius: 20px;
       padding: 24px;
-      border-radius: 22px;
-      max-width: 420px;
+      width: 90%;
+      max-width: 380px;
       text-align: center;
-      box-shadow: 0 12px 35px rgba(0,0,0,0.2);
-      position: relative;
-      z-index: 2;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.15);
     }
 
     h1 {
-      color: #ff4d6d;
-      margin-bottom: 10px;
+      color: #ff4d79;
     }
 
-    .notice {
-      background: #fff0f3;
-      border-radius: 12px;
-      padding: 12px;
+    .note {
+      background: #ffeef4;
+      padding: 10px;
+      border-radius: 10px;
+      margin: 12px 0;
       font-size: 14px;
-      margin: 15px 0;
     }
 
-    .date {
-      font-size: 20px;
-      font-weight: bold;
-      color: #ff4d6d;
-      margin: 10px 0;
+    .fade {
+      opacity: 0;
+      animation: fadeIn 1s forwards;
+    }
+
+    .delay1 { animation-delay: 0.4s; }
+    .delay2 { animation-delay: 1.2s; }
+    .delay3 { animation-delay: 2s; }
+    .delay4 { animation-delay: 2.8s; }
+
+    @keyframes fadeIn {
+      to { opacity: 1; }
     }
 
     ul {
-      list-style: none;
-      padding: 0;
-      margin: 15px 0;
       text-align: left;
+      padding-left: 0;
+      list-style: none;
     }
 
-    li {
-      margin: 8px 0;
-      font-size: 16px;
-    }
-
-    .buttons {
-      margin-top: 15px;
-      position: relative;
-      height: 60px;
+    ul li {
+      margin: 6px 0;
     }
 
     button {
-      padding: 12px 18px;
-      font-size: 15px;
-      border-radius: 30px;
       border: none;
+      border-radius: 20px;
+      padding: 10px 18px;
+      font-size: 16px;
       cursor: pointer;
+      margin: 10px;
     }
 
     #yesBtn {
-      background: #ff4d6d;
+      background: #ff4d79;
       color: white;
     }
 
     #noBtn {
       background: #ccc;
-      color: #333;
-      position: absolute;
-      right: 0;
+      position: relative;
     }
 
-    .hidden {
+    #successMessage {
       display: none;
       margin-top: 15px;
-      font-size: 16px;
-      color: #ff4d6d;
+      color: #ff4d79;
       font-weight: bold;
     }
 
-    .ps {
-      margin-top: 15px;
+    .hint {
       font-size: 13px;
-      color: #555;
-    }
-
-    .music-btn {
+      color: #888;
       margin-top: 10px;
-      background: transparent;
-      color: #ff4d6d;
-      border: 1px solid #ff4d6d;
-      font-size: 13px;
-    }
-
-    /* Floating hearts */
-    .heart {
-      position: absolute;
-      bottom: -20px;
-      font-size: 20px;
-      animation: floatUp 6s linear infinite;
-      opacity: 0.7;
-    }
-
-    @keyframes floatUp {
-      0% {
-        transform: translateY(0) scale(1);
-      }
-      100% {
-        transform: translateY(-110vh) scale(1.5);
-        opacity: 0;
-      }
     }
   </style>
 </head>
 
 <body>
 
-  <!-- Background Music -->
-  <audio id="bgMusic" loop>
-    <source src="fever-dream-alex-warren.mp3" type="audio/mpeg">
-  </audio>
+<div class="card">
+  <h1 class="fade delay1">Will you be my Valentine? 💘</h1>
 
-  <div class="card">
-    <h1>Will you be my Valentine? 💘</h1>
+  <div class="note fade delay2">
+    ⚠️ <b>Important Valentine Update</b> ⚠️<br>
+    I’ll be physically unavailable on Feb 14<br>
+    (emotionally available 24×7 🥺)
+  </div>
 
-    <div class="notice">
-      ⚠️ <b>Important Valentine Update</b> ⚠️<br>
-      I’ll be physically unavailable on Feb 14<br>
-      (emotionally available 24x7 🥹)
-    </div>
+  <div class="fade delay3">
+    ✨ <b>Rescheduled to FEB 16</b> ✨<br>
+    Same girl. Same feelings.<br>
+    More food. Better planning.
+  </div>
 
-    <div class="date">✨ Rescheduled to FEB 16 ✨</div>
-
-    <p>Same girl. Same feelings.<br>More food. Better planning.</p>
-
+  <div class="fade delay4">
     <ul>
-      <li>☑️ Momos</li>
-      <li>☑️ Pani Puri</li>
-      <li>☑️ BOTH (because this is not a democracy)</li>
+      <li>✅ Momos</li>
+      <li>✅ Pani Puri</li>
+      <li>✅ BOTH (because this is not a democracy)</li>
     </ul>
 
-    <p><b>So sir…</b><br>Will you be my Valentine on the 16th?</p>
+    <p><b>So sir…<br>Will you be my Valentine on the 16th?</b></p>
 
-    <div class="buttons">
-      <button id="yesBtn" onclick="sayYes()">YES (obviously)</button>
-      <button id="noBtn" onmouseover="runAway()">No</button>
-    </div>
+    <button id="yesBtn" onclick="sayYes()">YES (obviously)</button>
+    <button id="noBtn">No</button>
 
-    <div id="response" class="hidden">
+    <div id="successMessage">
       Correct choice 😌❤️<br>
       Get ready for momos, pani puri & me ✨
     </div>
 
-    <button class="music-btn" onclick="playMusic()">▶ Play Fever Dream</button>
-
-    <div class="ps">
+    <div class="hint">
       PS: Saying yes is mandatory.<br>
       PPS: I’ll still steal your pani puri.
     </div>
   </div>
+</div>
 
-  <script>
-    function sayYes() {
-      document.getElementById("response").style.display = "block";
-      playMusic();
-    }
+<!-- MUSIC -->
+<audio id="bgMusic" loop>
+  <source src="fever-dream-alex-warren.mp3" type="audio/mpeg">
+</audio>
 
-    function runAway() {
-      const btn = document.getElementById("noBtn");
-      btn.style.transform =
-        `translate(${Math.random()*200 - 100}px, ${Math.random()*50}px)`;
-    }
+<script>
+  // MUSIC – first tap anywhere
+  const music = document.getElementById("bgMusic");
+  document.body.addEventListener("click", () => {
+    if (music.paused) music.play();
+  }, { once: true });
 
-    function playMusic() {
-      document.getElementById("bgMusic").play();
-    }
+  // YES BUTTON
+  function sayYes() {
+    document.getElementById("successMessage").style.display = "block";
+    document.getElementById("yesBtn").style.display = "none";
+    document.getElementById("noBtn").style.display = "none";
+  }
 
-    // Floating hearts
-    setInterval(() => {
-      const heart = document.createElement("div");
-      heart.className = "heart";
-      heart.innerText = "❤️";
-      heart.style.left = Math.random() * 100 + "vw";
-      heart.style.animationDuration = 4 + Math.random() * 3 + "s";
-      document.body.appendChild(heart);
-      setTimeout(() => heart.remove(), 7000);
-    }, 500);
-  </script>
+  // NO BUTTON RUNS AWAY (desktop + mobile)
+  const noBtn = document.getElementById("noBtn");
+
+  function moveNoButton() {
+    const x = Math.random() * (window.innerWidth - noBtn.offsetWidth);
+    const y = Math.random() * (window.innerHeight - noBtn.offsetHeight);
+
+    noBtn.style.position = "fixed";
+    noBtn.style.left = `${x}px`;
+    noBtn.style.top = `${y}px`;
+    noBtn.innerText = "Nice try 😌";
+  }
+
+  noBtn.addEventListener("mouseover", moveNoButton);
+  noBtn.addEventListener("touchstart", moveNoButton);
+</script>
 
 </body>
 </html>
